@@ -7,9 +7,6 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 TIP: per controllare che la vostra logica sui prezzi funzioni correttamente, provate a verificare quanto segue:
 100km, 10 anni => prezzo corretto: €16.80
 100km, 70 anni => prezzo corretto: €12.60
-Tools:
--prompt
--
 */
 
 
@@ -21,9 +18,30 @@ console.log(distance, passengerAge);
 
 /* Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
 il prezzo del biglietto è definito in base ai km (0.21 € al km) */
+const priceForKm = Number(0.21);
+const price = distance * priceForKm;
+const priceFixed = Number(price.toFixed(2));
+// console.log(priceFixed);
+
 
 // va applicato uno sconto del 20% per i minorenni
-
+const percentageDiscount18 = Number(20);
+const under18 = Number(priceFixed * (1 - (percentageDiscount18 / 100)));
+const under18Fixed = Number(under18.toFixed(2));
+// console.log(under18Fixed);
 
 // va applicato uno sconto del 40% per gli over 65. */
+const percentageDiscount65 = Number(40);
+const over65 = priceFixed * Number((1 - (percentageDiscount65 / 100)));
+const over65Fixed = Number(over65.toFixed(2));
+// console.log(over65Fixed);
 
+
+
+if (passengerAge < 18) {
+    console.log(under18Fixed)
+} else if (passengerAge > 65) {
+    console.log(over65Fixed)
+} else {
+    console.log(priceFixed)
+}
