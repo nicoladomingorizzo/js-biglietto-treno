@@ -39,9 +39,9 @@ const over65 = price * (1 - (percentageDiscount65 / 100));
 
 
 if (passengerAge < 18) {
-    alert(under18.toFixed(2))
+    alert('Il prezzo del biglietto è : €' + under18.toFixed(2))
 } else if (passengerAge > 65) {
-    alert(over65.toFixed(2))
+    alert('Il prezzo del biglietto è : €' + over65.toFixed(2))
 } else {
-    alert(price.toFixed(2))
+    alert('Il prezzo del biglietto è : €' + price.toFixed(2))
 }

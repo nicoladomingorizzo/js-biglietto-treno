@@ -27,4 +27,4 @@ if (passengerAge < 18) {
     price = price * (1 - (discountPercent / 100))
 }
 
-alert(price.toFixed(2));
+alert('Il prezzo del biglietto é : €' + price.toFixed(2));
